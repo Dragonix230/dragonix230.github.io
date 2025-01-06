@@ -503,7 +503,7 @@
 
 </section><!-- End Services Section -->
 
-<!-- Contact Section -->
+  <!-- Contact Section -->
 <section id="contact" class="contact section">
 
   <!-- Section Title -->
@@ -544,23 +544,23 @@
       </div>
 
       <div class="col-lg-8">
-        <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required="">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
             </div>
 
-            <div class="col-md-6">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required="">
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
             </div>
 
             <div class="col-md-12">
-              <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required=""></textarea>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
             </div>
 
             <div class="col-md-12 text-center">
@@ -580,31 +580,6 @@
   </div>
 
 </section><!-- /Contact Section -->
-
-<!-- JavaScript to handle the mailto link -->
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Get form data
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
-
-    // Create the mailto link
-    const mailtoLink = `mailto:jishan2305@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
-
-    // Open the user's email client
-    window.location.href = mailtoLink;
-
-    // Show confirmation message (optional)
-    alert("Your message has been sent. Thank you!");
-  });
-</script>
-
 
   </main>
 
